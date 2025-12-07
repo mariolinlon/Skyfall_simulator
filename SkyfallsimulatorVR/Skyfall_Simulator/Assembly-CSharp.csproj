@@ -76,6 +76,7 @@
     <Compile Include="Assets\Scripts Nuestros\HUDScore.cs" />
     <Compile Include="Assets\VRTemplateAssets\Scripts\Callout.cs" />
     <Compile Include="Assets\VRTemplateAssets\Scripts\CalloutGazeController.cs" />
+    <Compile Include="Assets\Scripts Nuestros\RingFailZone.cs" />
     <Compile Include="Assets\Scripts Nuestros\Score.cs" />
     <Compile Include="Assets\VRTemplateAssets\Scripts\StepManager.cs" />
     <Compile Include="Assets\VRTemplateAssets\Scripts\AnchorVisuals.cs" />

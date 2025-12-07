@@ -1,5 +1,71 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4457158900223287270
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 538020192513236488}
+  - component: {fileID: 2752657754152620170}
+  - component: {fileID: 8627955476896710407}
+  m_Layer: 0
+  m_Name: Failzone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &538020192513236488
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4457158900223287270}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.0033, z: 0}
+  m_LocalScale: {x: 0.004, y: 0.004, z: 0.004}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8972011883370361906}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2752657754152620170
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4457158900223287270}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 40, y: 0.1, z: 40}
+  m_Center: {x: 0, y: -0.34835815, z: 0}
+--- !u!114 &8627955476896710407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4457158900223287270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ee3da02179d7864e9acefcc779ff6ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RingFailZone
 --- !u!1001 &8865410877317370841
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -98,7 +164,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6ba268f48a822b241b0eb00b775034e5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 538020192513236488}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6ba268f48a822b241b0eb00b775034e5, type: 3}
       insertIndex: -1
@@ -146,6 +215,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RingTrigger
   points: 100
-  oneShot: 1
+  ringPrefab: {fileID: 4289483867196629182}
+  yOffset: -20
+  rangeXZ: {x: 6, y: 6}
+  spawnParent: {fileID: 8972011883370361906}
+  minY: 5
   requireForwardEntry: 0
   minDot: 0
+--- !u!4 &8972011883370361906 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6ba268f48a822b241b0eb00b775034e5, type: 3}
+  m_PrefabInstance: {fileID: 8865410877317370841}
+  m_PrefabAsset: {fileID: 0}
