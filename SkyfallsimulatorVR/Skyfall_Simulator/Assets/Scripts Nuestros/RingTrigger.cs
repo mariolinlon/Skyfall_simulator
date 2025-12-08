@@ -73,8 +73,10 @@ public class RingTrigger : MonoBehaviour
         Vector3 nextPos = new Vector3(basePos.x + rx, basePos.y + yOffset, basePos.z + rz);
 
         if (nextPos.y < minY) return;
-
-        var go = Instantiate(ringPrefab.gameObject, nextPos, transform.rotation, spawnParent);
+        float xAngle = UnityEngine.Random.value > 0.5 ? 50 : -50;
+        float zAngle = UnityEngine.Random.Range(0f, 70f);
+        var go = Instantiate(ringPrefab.gameObject, nextPos, Quaternion.Euler(xAngle, 0, zAngle), spawnParent);
+       
         var rt = go.GetComponent<RingTrigger>();
         if (rt) rt.points = nextRingPoints; // establece la puntuación del nuevo aro
     }
