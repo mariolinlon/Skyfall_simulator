@@ -47,6 +47,7 @@ public class RingTrigger : MonoBehaviour
 
         // ACIERTO
         Score.Add(points);
+        FindObjectOfType<GravityVelocityController>()?.OnScored();
         SetNext(points + 10);   // siguiente vale +10
         done = true;
         SpawnNextRing();
@@ -55,6 +56,7 @@ public class RingTrigger : MonoBehaviour
     // Llamado por la FailZone al fallar
     public void OnMiss()
     {
+        FindObjectOfType<GravityVelocityController>()?.OnMissed();
         if (done) return;
         SetNext(100);           // resetea a 100
         OnMissed?.Invoke();     // notifica para mostrar mensaje HUD
@@ -74,7 +76,7 @@ public class RingTrigger : MonoBehaviour
 
         if (nextPos.y < minY) return;
         float xAngle = UnityEngine.Random.value > 0.5 ? 50 : -50;
-        float zAngle = UnityEngine.Random.Range(0f, 70f);
+        float zAngle = UnityEngine.Random.Range(0f, 40f);
         var go = Instantiate(ringPrefab.gameObject, nextPos, Quaternion.Euler(xAngle, 0, zAngle), spawnParent);
        
         var rt = go.GetComponent<RingTrigger>();
